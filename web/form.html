@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!-- saved from url=(0127)  -->
+<html>
+<!-- BEGIN: Head-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="Materialize is a Material Design Admin Template,It&#39;s modern, responsive and based on Material Design by Google.">
+  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
+  <meta name="author" content="ThemeSelect">
+  <title>Catetanku</title>
+  <link rel="apple-touch-icon" href="https://pixinvent.com/materialize-material-design-admin-template/app-assets/images/favicon/apple-touch-icon-152x152.png">
+  <link rel="shortcut icon" type="image/x-icon" href="https://pixinvent.com/materialize-material-design-admin-template/app-assets/images/favicon/favicon-32x32.png">
+  <link href="./public/icon" rel="stylesheet">
+  <!-- BEGIN: VENDOR CSS-->
+  <link rel="stylesheet" type="text/css" href="./public/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="./public/animate.css">
+  <link rel="stylesheet" type="text/css" href="./public/chartist.min.css">
+  <link rel="stylesheet" type="text/css" href="./public/chartist-plugin-tooltip.css">
+  <!-- END: VENDOR CSS-->
+  <!-- BEGIN: Page Level CSS-->
+  <link rel="stylesheet" type="text/css" href="./public/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="./public/style.min.css">
+  <link rel="stylesheet" type="text/css" href="./public/dashboard-modern.css">
+  <link rel="stylesheet" type="text/css" href="./public/intro.min.css">
+  <!-- END: Page Level CSS-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="./public/custom.css">
+  <!-- END: Custom CSS-->
+  <style type="text/css">
+  
+
+  .c-title {
+        font-size: 33px;
+    display: block;
+    font-family: Averta,sans-serif;
+    color: #1c252c;
+    letter-spacing: -0.015em;
+        line-height: 1.4;
+    font-weight: bold;
+  }
+
+  .c-head-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .c-button-create-top {
+    display: block;
+  }
+
+  input, textarea, .chzn-choices, .uneditable-input {
+    display: inline-block;
+    width: 210px;
+    padding: 4px;
+    margin-bottom: 3px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+    border: 1px solid #bbb;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.13), 0px 1px 0 rgba(255,255,255,0.5);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.13),0px 1px 0 rgba(255,255,255,0.5);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.13), 0px 1px 0 rgba(255,255,255,0.5);
+    -webkit-transition: border linear .2s,box-shadow linear .2s;
+    -moz-transition: border linear .2s,box-shadow linear .2s;
+    -ms-transition: border linear .2s,box-shadow linear .2s;
+    -o-transition: border linear .2s,box-shadow linear .2s;
+    transition: border linear .2s,box-shadow linear .2s;
+}
+
+label {
+    display: block;
+    float: left;
+    width: 180px;
+    padding-top: 6px;
+    padding-right: 8px;
+    text-align: right;
+}
+label {
+    color: #495f6b;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15px;
+}
+  </style>
+</head>
+<!-- END: Head-->
+
+<body class="vertical-layout page-header-light vertical-menu-collapsible vertical-gradient-menu 2-columns" data-open="click" data-menu="vertical-gradient-menu" data-col="2-columns" style="">
+  <!-- BEGIN: SideNav-->
+  <aside class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-dark gradient-45deg-deep-purple-blue sidenav-gradient">
+    <div class="brand-sidebar">
+      <h1 class="logo-wrapper"><a class="brand-logo darken-1" href="./index.html"><img class="hide-on-med-and-down " src="./public/materialize-logo.png" alt="materialize logo"><img class="show-on-medium-and-down hide-on-med-and-up" src="./public/materialize-logo-color.png" alt="materialize logo"><span class="logo-text hide-on-med-and-down">CATETANKU</span></a><a class="navbar-toggler"><i class="material-icons">radio_button_checked</i></a></h1>
+    </div>
+    <ul class="sidenav sidenav-collapsible leftside-navigation collapsible menu-shadow ps ps--active-y" id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion" style="transform: translateX(0px);">
+      <li class="active bold open">
+        <a class="waves-effect waves-cyan " href="JavaScript:void(0)" tabindex="0">
+          <i class="material-icons">settings_input_svideo</i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="bold">
+        <a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)" tabindex="0">
+          <i class="material-icons">dvr</i>
+          <span class="menu-title">Sales</span>
+        </a>
+        <div class="collapsible-body">
+          <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+            <li>
+              <a class="waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                <i class="material-icons">radio_button_unchecked</i>
+                <span>POS</span>
+              </a>
+            </li>
+            <li>
+              <a class="waves-effect waves-cyan" href="./invoices.html" tabindex="0">
+                <i class="material-icons">radio_button_unchecked</i>
+                <span>Invoice</span>
+              </a>
+            </li>
+            <li>
+              <a class="waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                <i class="material-icons">radio_button_unchecked</i>
+                <span>Customers</span>
+              </a>
+            </li>
+            <li>
+              <a class="waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                <i class="material-icons">radio_button_unchecked</i>
+                <span>Products & Services</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="bold">
+        <a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)" tabindex="0">
+          <i class="material-icons">dvr</i>
+          <span class="menu-title">Purchases</span>
+        </a>
+        <div class="collapsible-body">
+          <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+            <li>
+              <a class="waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                <i class="material-icons">radio_button_unchecked</i>
+                <span>Bills</span>
+              </a>
+            </li>
+            <li>
+              <a class="waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                <i class="material-icons">radio_button_unchecked</i>
+                <span>Receipts</span>
+              </a>
+            </li>
+            <li>
+              <a class="waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                <i class="material-icons">radio_button_unchecked</i>
+                <span>Vendors</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="bold">
+        <a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)" tabindex="0">
+          <i class="material-icons">dvr</i>
+          <span class="menu-title">Accounting</span>
+        </a>
+        <div class="collapsible-body">
+          <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+            <li>
+              <a class="waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                <i class="material-icons">radio_button_unchecked</i>
+                <span>-</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="bold">
+        <a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)" tabindex="0">
+          <i class="material-icons">dvr</i>
+          <span class="menu-title">Reports</span>
+        </a>
+        <div class="collapsible-body">
+          <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+            <li>
+              <a class="waves-effect waves-cyan" href="JavaScript:void(0)" tabindex="0">
+                <i class="material-icons">radio_button_unchecked</i>
+                <span>Journals</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </aside>
+  <!-- END: SideNav-->
+  <!-- BEGIN: Page Main-->
+  <div id="main" class="mt-3">
+    <div class="row">
+      <div class="content-wrapper-before blue-grey lighten-5"></div>
+      <div class="col s12">
+        <div class="container">
+          <div class="section">
+            <div class="row">
+              <div class="col s12 c-head-title">
+                <div class="c-header">
+                  <div class="c-title">Add a Product or Service</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-content">
+                <div class="form_data row container mt-2">
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row mb-1">
+                        <div class="col s12">
+                          <label for="name">Name</label>
+                          <input id="name" type="text" class="validate browser-default r_input">
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col s12">
+                          <label for="price">Price</label>
+                          <input id="price" type="number" value="0.00" class="validate browser-default">
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col s12">
+                          <label for="price">Price asdasdasd</label>
+                          <input id="price" type="number" value="0.00" class="validate browser-default">
+                        </div>
+                      </div>
+                      <div class="row mb-1">
+                        <div class="col s12">
+                          <label for="price"></label>
+                          <a class="teal lighten-2 waves-effect waves-light btn">button</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-overlay"></div>
+        </div>
+      </div>
+    </div>
+    <!-- END: Page Main-->
+    <!-- BEGIN: Footer-->
+    <footer class="page-footer footer footer-static footer-light navbar-border navbar-shadow display-none">
+      <div class="footer-copyright">
+        <div class="container"><span>© 2020 <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PIXINVENT</a> All rights reserved.</span><span class="right hide-on-small-only">Design and Developed by <a href="https://pixinvent.com/">PIXINVENT</a></span></div>
+      </div>
+    </footer>
+    <!-- END: Footer-->
+    <!-- BEGIN VENDOR JS-->
+    <script src="./public/vendors.min.js.download"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <!--script src="./public/chart.min.js.download"></script>
+        <script src="./public/chartist.min.js.download"></script>
+        <script src="./public/chartist-plugin-tooltip.js.download"></script>
+        <script src="./public/chartist-plugin-fill-donut.min.js.download"></script-->
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN THEME  JS-->
+    <script src="./public/plugins.min.js.download"></script>
+    <script src="./public/search.min.js.download"></script>
+    <script src="./public/custom-script.min.js.download"></script>
+    <script src="./public/customizer.min.js.download"></script>
+    <!-- END THEME  JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>

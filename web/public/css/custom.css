@@ -1,0 +1,84 @@
+/*================================================================================
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PIXINVENT
+	Author URL: https://themeforest.net/user/pixinvent/portfolio
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+
+  .c-title {
+        font-size: 33px;
+    display: block;
+    font-family: Averta,sans-serif;
+    color: #1c252c;
+    letter-spacing: -0.015em;
+        line-height: 1.4;
+    font-weight: bold;
+  }
+
+  .c-head-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .c-button-create-top {
+    display: block;
+  }
+
+  input, textarea, .chzn-choices, .uneditable-input {
+    display: inline-block;
+    width: 210px;
+    padding: 4px;
+    margin-bottom: 3px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+    border: 1px solid #bbb;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.13), 0px 1px 0 rgba(255,255,255,0.5);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.13),0px 1px 0 rgba(255,255,255,0.5);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.13), 0px 1px 0 rgba(255,255,255,0.5);
+    -webkit-transition: border linear .2s,box-shadow linear .2s;
+    -moz-transition: border linear .2s,box-shadow linear .2s;
+    -ms-transition: border linear .2s,box-shadow linear .2s;
+    -o-transition: border linear .2s,box-shadow linear .2s;
+    transition: border linear .2s,box-shadow linear .2s;
+}
+
+label {
+    display: block;
+    float: left;
+    width: 120px;
+    padding-top: 6px;
+    padding-right: 8px;
+    text-align: right;
+}
+label {
+    color: #495f6b;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15px;
+}
+
+input.t-input {
+	width: 100px;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.text-black {
+	color: black;
+}
+
+.text-large {
+	font-size: 24px !important;
+}
