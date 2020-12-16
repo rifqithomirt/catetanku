@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 </div>
                 <div class="col s6">
                     <label for="notes">Notes</label>
-                    <textarea id="notes" class="input-medium" type="text" tabindex="12"></textarea>
+                    <textarea id="notes" class="input-large" type="text" tabindex="12"></textarea>
                 </div>
             </div>`
     ]

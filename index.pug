@@ -17,6 +17,7 @@ html
     link(rel='stylesheet' type='text/css' href='/public/css/dashboard-modern.css')
     link(rel='stylesheet' type='text/css' href='/public/css/intro.min.css')
     link(rel='stylesheet' type='text/css' href='/public/css/custom.css')
+    link(rel='stylesheet' type='text/css' href='/public/css/select2.min.css')
     link(rel='stylesheet' type='text/css' href='' + dircss)
   // END: Head
   body.vertical-layout.page-header-light.vertical-menu-collapsible.vertical-gradient-menu.2-columns(data-open='click' data-menu='vertical-gradient-menu' data-col='2-columns')
@@ -35,7 +36,7 @@ html
             i.material-icons radio_button_checked
       ul#slide-out.sidenav.sidenav-collapsible.leftside-navigation.collapsible.sidenav-fixed.menu-shadow.ps.ps--active-y(data-menu='menu-navigation' data-collapsible='menu-accordion')
         li.active.bold.open
-          a.waves-effect.waves-cyan(href='JavaScript:void(0)' tabindex='0')
+          a.waves-effect.waves-cyan(href='/dashboard/' tabindex='0')
             i.material-icons settings_input_svideo
             span.menu-title Dashboard
         li.bold
@@ -53,7 +54,7 @@ html
                   i.material-icons radio_button_unchecked
                   span Invoice
               li
-                a.waves-effect.waves-cyan(href='JavaScript:void(0)' tabindex='0')
+                a.waves-effect.waves-cyan(href='/products/create/' tabindex='0')
                   i.material-icons radio_button_unchecked
                   span Products & Services
         li.bold
@@ -77,7 +78,7 @@ html
           .collapsible-body
             ul.collapsible.collapsible-sub(data-collapsible='accordion')
               li
-                a.waves-effect.waves-cyan(href='JavaScript:void(0)' tabindex='0')
+                a.waves-effect.waves-cyan(href='/' tabindex='0')
                   i.material-icons radio_button_unchecked
                   span -
         li.bold
@@ -87,7 +88,7 @@ html
           .collapsible-body
             ul.collapsible.collapsible-sub(data-collapsible='accordion')
               li
-                a.waves-effect.waves-cyan(href='JavaScript:void(0)' tabindex='0')
+                a.waves-effect.waves-cyan(href='/journal/' tabindex='0')
                   i.material-icons radio_button_unchecked
                   span Journals
       a.sidenav-trigger.btn-sidenav-toggle.btn-floating.btn-medium.waves-effect.waves-light.hide-on-large-only(href='#' data-target='slide-out')
@@ -124,4 +125,5 @@ html
       // BEGIN PAGE LEVEL JS
       script(src='/public/js/dashboard-modern.js')
       script(src='/public/js/intro.min.js')
+      script(src='/public/js/select2.min.js')
       script(src= dir)
