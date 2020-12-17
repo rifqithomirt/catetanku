@@ -47,31 +47,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 								<th class="text-bold text-black">Payment status</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<div>
-										<p>2020-12-15</p>
-									</div>
-								</td>
-								<td>
-									<div>
-										<p>X001</p>
-									</div>
-								</td>
-								<td>
-									<div>
-										<p class="text-bold">Tes</p>
-										<p>Vendor</p>
-									</div>
-								</td>
-								<td>
-									<div class="text-black">Rp <span>0.00</span></div>
-								</td>
-								<td>
-									<div class="text-black"><span class="new badge" data-badge-caption="">Paid</span></div>
-								</td>
-							</tr>
+						<tbody id="data-body">
 						</tbody>
 					</table>
 				</div>
@@ -80,4 +56,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	</div>
 </div>`;
   $('#main-container').append(str);
+  var arrData = [
+	{
+		date: '2020-12-17',
+		number: '2020120001',
+		customer: 'PT. Torabika',
+		amount : 2000000,
+		paymentStatus : 'Paid'
+	},
+	{
+		date: '2020-12-17',
+		number: '2020120002',
+		customer: 'PT. Mocacino',
+		amount : 2000000,
+		paymentStatus : 'Paid'
+	},
+	{
+		date: '2020-12-18',
+		number: '2020120003',
+		customer: 'PT. Kretek',
+		amount : 2000000,
+		paymentStatus : 'Paid'
+	}
+];
+	var strTbody = arrData.map( function( row ) {
+		var str = `<tr>
+		<td>${row.date}</td>
+		<td>${row.number}</td>
+		<td>
+			<div>
+				<p class="text-bold">${row.customer}</p>
+				<p class="description">Customer</p>
+			</div>
+		</td>
+		<td>
+			<div class="text-black">${new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(row.amount * 1)}</div>
+		</td>
+		<td>
+			<div class="text-black"><span class="new badge" data-badge-caption="">${row.paymentStatus}</span></div>
+		</td>
+	</tr>`;
+		return str;
+	});
+	$('#data-body').html(strTbody)
 });

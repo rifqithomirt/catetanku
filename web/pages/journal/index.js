@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   $('#main-container').html(str);
   var str = `
 <div class="section">
-	
 	<div class="card">
 		<div class="card-content">
 			<div class="table_data row">

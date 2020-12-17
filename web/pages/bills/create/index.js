@@ -128,31 +128,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
     $('#body_data').append(strEmptyTable);
   })
   $('table').delegate('td input.qty', 'change', function(e){
-    console.log(this.parentNode.parentNode)
     var thisval = $(this).val();
-    thisval = _.isNumber(thisval) ? thisval : 0;
-    var tdPrice = $(this.parentNode.parentNode).find( 'input.qty' );
+    thisval = _.isNumber(thisval * 1 ) ? thisval : 0;
+    var tdPrice = $(this.parentNode.parentNode).find( 'input.price' );
     var price = $( tdPrice ).val();
-    price = _.isNumber(price) ? price : 0;
+    price = _.isNumber(price * 1 ) ? price : 0;
+    console.log(thisval, price)
     var tdCalcAmount = $(this.parentNode.parentNode).find( 'span.calculatedAmount' );
     $(tdCalcAmount).text(new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(thisval * price))
+    $(tdCalcAmount).data('ori',thisval * price)
     setSum();
   });
   $('table').delegate('td input.price', 'change', function(e){
-    console.log(this.parentNode.parentNode)
-    
     var thisval = $(this).val();
-    thisval = _.isNumber(thisval) ? thisval : 0;
+    thisval = _.isNumber(thisval * 1) ? thisval : 0;
     var tdQty = $(this.parentNode.parentNode).find( 'input.qty' );
     var qty = $( tdQty ).val();
-    qty = _.isNumber(qty) ? qty : 0;
+    qty = _.isNumber(qty * 1) ? qty : 0;
     var tdCalcAmount = $(this.parentNode.parentNode).find( 'span.calculatedAmount' );
     $(tdCalcAmount).text(new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(thisval * qty))
+    $(tdCalcAmount).data('ori',thisval * qty)
     setSum();
   });
   var setSum = function() {
     var total = Array.from($('.calculatedAmount')).reduce(function(old, now){
-      old += ($(now).text().replace('Rp', '') * 1)
+      old += ($(now).data('ori') * 1)
       return old;
     }, 0)
     $('#sum').text( new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(total * 1) )
