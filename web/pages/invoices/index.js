@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			</div>
 		</div>
 	</div>
-	<div class="card">
+	<!--div class="card">
 		<div class="card-content">
 			<div class="row">
 				<div class="col s6">
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				</div>
 			</div>
 		</div>
-	</div>
+	</div-->
 	<div class="card">
 		<div class="card-content">
 			<div class="table_data row">

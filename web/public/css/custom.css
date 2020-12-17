@@ -94,3 +94,15 @@ a.add-row{
 .button_save {
   padding-top: 10px;
 }
+
+.t-center {
+  text-align: center;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-left {
+  text-align: left;
+}
