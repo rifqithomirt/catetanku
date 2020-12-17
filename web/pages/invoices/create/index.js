@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     arrayForm: [
       `<div class="row">
                 <div class="col s6">
-                    <label for="vendor">Customer</label>
-                    <select class="js-example-basic-single browser-default validate input-large" name="state">
-                      <option value="AL">Alabama</option>
-                      <option value="WY">Wyoming</option>
+                    <label for="customer">Customer</label>
+                    <select id="select_customer" class="browser-default validate input-large">
                     </select>
                 </div>
                 <div class="col s6">
@@ -49,8 +47,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
                           <th class="text-bold text-black">Amount</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
+                      <tbody id="body_data">
+                        
+                       </tbody>
+                       <tfoot>
+                       		<tr>
+                          <td>
+                            <a class="add-row" id="add_data">
+                            	<i class="material-icons md-18">control_point</i>Add
+                            </a>
+                          </td>
+                          <td></td>
+                          <td></td>
+                          <td class="text-bold text-black">Total (IDR):	</td>
+                          <td>
+                            <div class="text-bold text-black right">Rp <span>0.00</span></div>
+                          </td>
+                        </tr>
+                       </tfoot>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12 right">
+                  <div class="button_save">
+                    <a class="waves-effect waves-light btn right">Save</a>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+  $('#main-container').append(str);
+  $('#select_customer').select2({
+    placeholder: "Select a vendor",
+    allowClear: true
+  });
+
+  var strEmptyTable = `<tr>
                           <td>
                             <input type="text" class="browser-default input-small">
                           </td>
@@ -64,32 +97,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
                             <input type="text" class="browser-default input-medium">
                           </td>
                           <td>
-                            <div class="text-black">Rp <span>0.00</span></div>
+                            <div class="text-black right">Rp <span>0.00</span></div>
                           </td>
-                        </tr>
-                       </tbody>
-                       <tfoot>
-                       		<tr>
-                          <td>
-                            <a>
-                            	<i class="material-icons">control_point</i>
-                            	<span>Add</span>
-                            </a>
-                          </td>
-                          <td></td>
-                          <td></td>
-                          <td class="text-bold text-black">Total (IDR):	</td>
-                          <td>
-                            <div class="text-bold text-black">Rp <span>0.00</span></div>
-                          </td>
-                        </tr>
-                       </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>`;
-  $('#main-container').append(str);
-      $('.js-example-basic-single').select2();
+                        </tr>`;
+                        $('#body_data').append(strEmptyTable);
+                        $('#add_data').on('click', function () {
+                          $('#body_data').append(strEmptyTable);
+                        })
 
 });

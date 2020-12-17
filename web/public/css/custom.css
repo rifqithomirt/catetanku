@@ -86,3 +86,11 @@ input.t-input {
 .text-black2 {
     color: #1c252c;
 }
+
+a.add-row{
+  cursor: pointer;
+} 
+
+.button_save {
+  padding-top: 10px;
+}

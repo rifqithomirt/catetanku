@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       `<div class="row">
                 <div class="col s6">
                     <label for="vendor">Vendor</label>
-                    <input id="vendor" type="text" class="validate browser-default">
+                    <select id="select_vendor" class="browser-default validate input-large"></select>
                 </div>
                 <div class="col s6">
                     <label for="date">Date</label>
@@ -43,8 +43,67 @@ document.addEventListener("DOMContentLoaded", function(event) {
                           <th class="text-bold text-black">Amount</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
+                      <tbody id="body_data">
+                        
+                       </tbody>
+                       <tfoot>
+                       		<tr>
+                          <td>
+                            <a id="add_data" class="add-row"><i class="material-icons md-18">control_point</i>Add</a>
+                          </td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td class="text-bold text-black">Total (IDR):	</td>
+                          <td>
+                            <div class="text-bold text-black" id="sum">0.00</div>
+                          </td>
+                        </tr>
+                       </tfoot>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12 right">
+                  <div class="button_save">
+                    <a class="waves-effect waves-light btn right">Save</a>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+  $('#main-container').append(str);
+  var arrData = [
+    {
+      date: '2020-12-17',
+      number: '2020120001',
+      vendor: 'PT. Torabika',
+      amount : 2000000,
+      paymentStatus : 'Paid'
+    },
+    {
+      date: '2020-12-17',
+      number: '2020120002',
+      vendor: 'PT. Mocacino',
+      amount : 2000000,
+      paymentStatus : 'Paid'
+    },
+    {
+      date: '2020-12-18',
+      number: '2020120003',
+      vendor: 'PT. Kretek',
+      amount : 2000000,
+      paymentStatus : 'Paid'
+    }
+  ];
+  var strOption = '<option></option>' + arrData.map( function( row ) {
+    return `<option value="${row.vendor}">${row.vendor}</option>`;
+  });
+  $('#select_vendor').html(strOption).select2({
+    placeholder: "Select a vendor",
+    allowClear: true
+  });
+  var strEmptyTable = `<tr>
                           <td>
                             <input type="text" class="browser-default input-small">
                           </td>
@@ -55,38 +114,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
                             <textarea type="text" class="input-small"></textarea>
                           </td>
                           <td>
-                            <input type="text" class="browser-default input-mini">
+                            <input type="number" class="browser-default input-mini qty" value=0>
                           </td>
                           <td>
-                            <input type="text" class="browser-default input-medium">
+                            <input type="number" class="browser-default input-medium price" value=0>
                           </td>
                           <td>
-                            <div class="text-black">Rp <span>0.00</span></div>
+                            <div class="text-black"><span class="calculatedAmount">0.00</span></div>
                           </td>
-                        </tr>
-                       </tbody>
-                       <tfoot>
-                       		<tr>
-                          <td>
-                            <a>
-                            	<i class="material-icons">control_point</i>
-                            	<span>Add</span>
-                            </a>
-                          </td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td class="text-bold text-black">Total (IDR):	</td>
-                          <td>
-                            <div class="text-bold text-black">Rp <span>0.00</span></div>
-                          </td>
-                        </tr>
-                       </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>`;
-  $('#main-container').append(str);
-  $('select').formSelect();
+                        </tr>`;
+  $('#body_data').append(strEmptyTable);
+  $('#add_data').on('click', function () {
+    $('#body_data').append(strEmptyTable);
+  })
+  $('table').delegate('td input.qty', 'change', function(e){
+    console.log(this.parentNode.parentNode)
+    var thisval = $(this).val();
+    thisval = _.isNumber(thisval) ? thisval : 0;
+    var tdPrice = $(this.parentNode.parentNode).find( 'input.qty' );
+    var price = $( tdPrice ).val();
+    price = _.isNumber(price) ? price : 0;
+    var tdCalcAmount = $(this.parentNode.parentNode).find( 'span.calculatedAmount' );
+    $(tdCalcAmount).text(new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(thisval * price))
+    setSum();
+  });
+  $('table').delegate('td input.price', 'change', function(e){
+    console.log(this.parentNode.parentNode)
+    
+    var thisval = $(this).val();
+    thisval = _.isNumber(thisval) ? thisval : 0;
+    var tdQty = $(this.parentNode.parentNode).find( 'input.qty' );
+    var qty = $( tdQty ).val();
+    qty = _.isNumber(qty) ? qty : 0;
+    var tdCalcAmount = $(this.parentNode.parentNode).find( 'span.calculatedAmount' );
+    $(tdCalcAmount).text(new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(thisval * qty))
+    setSum();
+  });
+  var setSum = function() {
+    var total = Array.from($('.calculatedAmount')).reduce(function(old, now){
+      old += ($(now).text().replace('Rp', '') * 1)
+      return old;
+    }, 0)
+    $('#sum').text( new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(total * 1) )
+  }
 });
