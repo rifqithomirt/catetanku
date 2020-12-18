@@ -1,0 +1,139 @@
+<html>
+<!-- BEGIN: Head-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="author" content="ThemeSelect">
+  <title>User Login</title>
+
+  <link rel="stylesheet" type="text/css" href="/public/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/dashboard-modern.css">
+
+  <link rel="stylesheet" type="text/css" href="/public/css/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/login.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/custom.css">
+  <style type="text/css">
+    @font-face {
+      font-family: 'Material Icons';
+      font-style: normal;
+      font-weight: 400;
+      src: url(iconfont/MaterialIcons-Regular.eot);
+      /* For IE6-8 */
+      src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        /* Old file: url(iconfont/MaterialIcons-Regular.woff2) format('woff2'), */
+        /* load new file */
+        url(fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2'),
+        url(iconfont/MaterialIcons-Regular.ttf) format('truetype');
+    }
+
+    .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<!-- END: Head-->
+
+<body
+  class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu 1-column login-bg blank-page blank-page"
+  data-open="click" data-menu="vertical-modern-menu" data-col="1-column">
+  <div class="row">
+    <div class="col s12">
+      <div class="container">
+        <div id="login-page" class="row">
+          <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
+            <form class="login-form">
+              <div class="row center-align">
+                <div class="input-field col s12">
+                  <img class="responsive-img" style="width:100px;" src=""/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <h5 class="ml-4">Sign in</h5>
+                </div>
+              </div>
+              <div class="row margin">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix pt-2">person_outline</i>
+                  <input id="username" type="text">
+                  <label for="username" class="center-align">Username</label>
+                </div>
+              </div>
+              <div class="row margin">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix pt-2">lock_outline</i>
+                  <input id="password" type="password">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <a id="login"
+                    class="btn waves-effect waves-light border-round red darken-2 col s12">Login</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="content-overlay"></div>
+    </div>
+  </div>
+
+  <script src="/public/js/vendors.min.js"></script>
+  <script src="/public/js/custom-script.min.js"></script>
+  <script>
+    $('#login').on('click', () => {
+      var user = {
+        username: $('#username').val(),
+        password: $('#password').val()
+      }
+      if (checkValidity(user)) {
+        $.ajax({
+          url: 'http://103.146.203.103:3132/get/login',
+          type: 'post',
+          data: JSON.stringify( user ),
+          "headers": {
+              "accept": "application/json",
+              "Access-Control-Allow-Origin":"*"
+          },
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+          success: function (data) {
+            if( 'token' in data ) {
+              Cookies.set('token', data.token, { expires: 1 })
+              window.location = "./dashboard/view1/"
+            } else {
+              alert('Error')
+              location.reload() 
+            }
+          }
+        })
+      } else {
+        alert("Isi data dengan benar")
+        window.location.reload()
+      }
+    })
+
+    function checkValidity(user) {
+      return user.username != "" && user.password != ""
+    }
+  </script>
+</body>
+
+</html>
