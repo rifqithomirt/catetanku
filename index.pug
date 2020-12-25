@@ -1,5 +1,5 @@
 doctype html
-html
+html(dir="ltr")
   head
     meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
@@ -15,6 +15,7 @@ html
     link(rel='stylesheet' type='text/css' href='/public/css/dashboard-modern.css')
     link(rel='stylesheet' type='text/css' href='/public/css/intro.min.css')
     link(rel='stylesheet' type='text/css' href='/public/css/custom.css')
+    link(rel='stylesheet' type='text/css' href='/public/css/vc.css')
     link(rel='stylesheet' type='text/css' href='/public/css/select2.min.css')
     link(rel='stylesheet' type='text/css' href='/public/css/perfect-scrollbar.min.css')
     link(rel='stylesheet' type='text/css' href='' + dircss)
@@ -34,7 +35,7 @@ html
           a.navbar-toggler
             i.material-icons radio_button_checked
       ul#slide-out.sidenav.sidenav-collapsible.leftside-navigation.collapsible.sidenav-fixed.menu-shadow.ps.ps--active-y(data-menu='menu-navigation' data-collapsible='menu-accordion')
-        li.active.bold.open
+        li.bold
           a.waves-effect.waves-cyan(href='/dashboard/' tabindex='0')
             i.material-icons settings_input_svideo
             span.menu-title Dashboard
@@ -118,4 +119,6 @@ html
       script(src='/public/js/intro.min.js')
       script(src='/public/js/select2.min.js')
       script(src='/public/js/core.js')
+      script(src='/public/js/jquery.validate.min.js')
+      script(src='/public/js/uuidv4.min.js')
       script(src= dir)

@@ -33,8 +33,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			</div>
 		</div>
 	</div-->
-	<div class="card">
-		<div class="card-content">
+	<div class="vx-card">
+        <div class="vx-card__collapsible-content">
+        <div class="vx-card__body">
 			<div class="table_data row">
 				<div class="col s12">
 					<table id="table_id" class="display">
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					</table>
 				</div>
 			</div>
+		</div>
 		</div>
 	</div>
 </div>`;

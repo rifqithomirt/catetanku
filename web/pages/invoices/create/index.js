@@ -5,27 +5,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
     arrayForm: [
       `<div class="row">
                 <div class="col s6">
-                    <label for="customer">Customer</label>
-                    <select id="select_customer" class="browser-default validate input-large">
+                    <label for="customer" class="form">Customer</label>
+                    <select id="select_customer" class="browser-default validate input-medium">
                     </select>
                 </div>
-                <div class="col s6">
-                    <label for="invoiceNumber">Invoice Number</label>
-                    <input id="invoiceNumber" type="text" class="validate browser-default">
+                <div class="col s6" >
+                    <label for="invoiceNumber" class="form">Invoice Number</label>
+                    <input id="invoiceNumber" placeholder="0001" type="text" class="validate browser-default input-medium">
                 </div>
             </div>`,
       `<div class="row">
                 <div class="col s6"></div>
                 <div class="col s6">
-                    <label for="notes">P.O. Number</label>
-                    <input id="notes" class="validate browser-default" type="text">
+                    <label for="po" class="form">P.O. Number</label>
+                    <input id="po" placeholder="0001" class="validate browser-default input-medium" type="text">
                 </div>
             </div>`,
       `<div class="row">
                 <div class="col s6"></div>
                 <div class="col s6">
-                    <label for="notes">Invoice Date</label>
-                    <input id="notes" class="validate browser-default" type="date">
+                    <label for="invoiceDate" class="form">Invoice Date</label>
+                    <input id="invoiceDate" class="validate browser-default input-medium" type="date">
                 </div>
             </div>`
     ]
@@ -33,8 +33,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var str = createForm(objCreateForm);
   $('#main-container').html(str);
   var str = `    
-<div class="card">
-<div class="card-content">
+  <div class="vx-card">
+  <div class="vx-card__collapsible-content">
+  <div class="vx-card__body">
   <div class="table_data row">
     <div class="col s12">
       <table id="table_id" class="display">
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </div>
 </div>
+</div>
 
 `;
   $('#main-container').append(str);
@@ -98,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		<textarea type="text" class="input-small"></textarea>
 	</td>
 	<td class="t-center">
-		<input type="number" value=1 class="t-right browser-default input-tiny qty">
+		<input type="number" value=1 class="t-right browser-default input-small qty">
 	</td>
 	<td class="t-center">
 		<input type="number" value="0" class="t-right browser-default input-medium price">

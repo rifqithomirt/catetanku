@@ -91,7 +91,7 @@ http.createServer(function (request, response) {
             response.end(content, 'utf-8');
           });
         } else {
-          console.log(loginContent.toString())
+          //console.log(loginContent.toString())
           response.writeHead(200, {
             'Content-Type': 'text/html'
           });

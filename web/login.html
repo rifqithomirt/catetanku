@@ -64,7 +64,7 @@
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <h5 class="ml-4">Sign in</h5>
+                  <h1 class="ml-4">Sign in</h1>
                 </div>
               </div>
               <div class="row margin">
@@ -104,6 +104,9 @@
         password: $('#password').val()
       }
       if (checkValidity(user)) {
+
+        window.location = "/dashboard/"
+        /*
         $.ajax({
           url: 'http://103.146.203.103:3132/get/login',
           type: 'post',
@@ -124,9 +127,10 @@
             }
           }
         })
+        */
       } else {
         alert("Isi data dengan benar")
-        window.location.reload()
+        //window.location.reload()
       }
     })
 

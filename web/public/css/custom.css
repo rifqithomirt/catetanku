@@ -12,7 +12,8 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 
 
   .c-title {
-        font-size: 33px;
+        font-size: 24px;
+        margin-bottom: 15px;
     display: block;
     font-family: Averta,sans-serif;
     color: #1c252c;
@@ -52,7 +53,7 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
     transition: border linear .2s,box-shadow linear .2s;
 }
 
-label {
+label.form {
     display: block;
     float: left;
     width: 120px;
@@ -105,4 +106,21 @@ a.add-row{
 
 .t-left {
   text-align: left;
+}
+
+textarea.input-large {
+  height: 80px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(155, 155, 155);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:  rgb(155, 155, 155);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(155, 155, 155);
 }
